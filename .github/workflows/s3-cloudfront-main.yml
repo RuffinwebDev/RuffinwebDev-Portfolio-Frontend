@@ -50,11 +50,11 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: web-app-dist
-        path: dist
+        path: ./dist
 
     - name: Display structure of downloaded files
       run: ls -R
-      working-directory: dist
+      working-directory: ./dist
 
     # S3 sync
     - name: S3 Sync
@@ -64,7 +64,7 @@ jobs:
       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_BUCKET_PRODUCTION }}
         AWS_REGION: 'us-east-1'   # optional: defaults to us-east-1
-        SOURCE_DIR: 'dist'      # optional: defaults to entire repository
+        SOURCE_DIR: './dist'      # optional: defaults to entire repository
 
     # Invalidate Cloudfront
     - name: Cloudfront Invalidation
