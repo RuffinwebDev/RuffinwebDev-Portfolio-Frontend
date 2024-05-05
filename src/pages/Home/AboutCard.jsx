@@ -44,7 +44,7 @@ const AboutCard = React.forwardRef((props, ref) => {
   };
 
   return (
-    <GsapReveal ref={ref}>
+    // <GsapReveal ref={ref}>
       <Box sx={aboutCardStyle} id="aboutCard" ref={ref}>
         <Box sx={textSectionStyle}>
           <Typography variant="h4" gutterBottom color="primary">
@@ -64,7 +64,7 @@ const AboutCard = React.forwardRef((props, ref) => {
           <SkillsGrid />
         </Box>
       </Box>
-    </GsapReveal>
+    // </GsapReveal>
   );
 });
 

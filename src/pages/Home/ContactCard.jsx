@@ -51,8 +51,8 @@ const ContactCard = forwardRef((props, ref) => {
     },
   };
   return (
-    <GsapReveal ref={ref}>
-      <Box sx={contactFormStyle}>
+    <div ref={ref}>
+      <Box sx={contactFormStyle} ref={ref}>
         <ContactForm
           formData={formData}
           handleChange={HandleChange({ formData, setFormData, setErrors })}
@@ -63,7 +63,7 @@ const ContactCard = forwardRef((props, ref) => {
           setOpenSnackbar={setOpenSnackbar}
         />
       </Box>
-    </GsapReveal>
+    </div>
   );
 });
 

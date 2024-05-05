@@ -39,8 +39,7 @@ Solo code review for deploying in a production environment. There are still addi
 - Follow best practices for component naming and structure to enhance readability.
 - Implement error boundaries to gracefully handle errors within components.
 - The LinksAppBar components and Contact components are the most complex and provide the most opportunities to test different 
-- JS/React features for example state management, animations, references, and HTTP requests. 
-It is a good place to start refactoring and simplifying components. The contact form page 
+JS/React features for example state management, animations, references, and HTTP requests. Those components are good places  to start refactoring and simplifying the code.
 - The NavbarLinksSection and Menu component need to be edited so that clicks within the button but outside the text are registered. 
 Currently, a click outside the text shows the click feedback and closes the menu, but does not initiate the expected page scroll.
 - GSAP reveal animations interfere with the useRef scroll behavior, causing the page to scroll too far past the revealed content. 

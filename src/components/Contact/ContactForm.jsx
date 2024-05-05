@@ -37,6 +37,10 @@ function ContactForm(props) {
         <Typography component="h1" variant="h5" color="primary">
           Contact Me
         </Typography>
+<Typography component="h1" variant="subtitle2" color="primary">
+  I am currently seeking a full-time position in backend or frontend development. Feel free to reach out to me if you have any opportunities available or if you would like to discuss potential collaborations!
+</Typography>
+
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>

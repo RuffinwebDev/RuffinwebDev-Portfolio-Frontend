@@ -33,8 +33,8 @@ const ResumeCard = forwardRef((props, ref) => {
   };
 
   return (
-    <GsapReveal ref={ref}>
-      <Box sx={resumeCardStyle}>
+    <div ref={ref}>
+      <Box sx={resumeCardStyle} >
         <Avatar sx={{ m: 1, bgcolor: "active.main" }}>
           <ContactPageIcon />
         </Avatar>
@@ -67,7 +67,7 @@ const ResumeCard = forwardRef((props, ref) => {
           </Link>
         </Box>
       </Box>
-    </GsapReveal>
+    </div>
   );
 });
 

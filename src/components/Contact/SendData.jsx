@@ -1,9 +1,9 @@
 const sendData = async (formData) => {
   try {
     // Define the API endpoint URLs
-    const createContactApiUrl = "http://localhost:8000/api/sender/";
-    const createMessageApiUrl = "http://localhost:8000/api/message/";
-    const sendEmailApiUrl = "http://localhost:8000/api/send-email"; // Why dont I need the trailing slash here?
+    const createContactApiUrl = "ec2-3-95-23-176.compute-1.amazonaws.com:8000/api/sender/";
+    const createMessageApiUrl = "ec2-3-95-23-176.compute-1.amazonaws.com:8000/api/message/";
+    const sendEmailApiUrl = "ec2-3-95-23-176.compute-1.amazonaws.com:8000/api/send-email"; // Why don't I need the trailing slash here?
 
     const senderRequestBody = {
       message: formData.message,
