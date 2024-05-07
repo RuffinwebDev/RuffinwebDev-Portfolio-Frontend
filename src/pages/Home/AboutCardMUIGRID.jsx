@@ -2,10 +2,10 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import AboutDetail from "../../components/About/AboutDetail.jsx";
-import ToolsGrid from "../../components/Tools/ToolsGrid.jsx";
 import AboutArray from "../../utils/AboutArray.jsx";
 import GsapReveal from "./GsapReveal.jsx";
 import { useTheme } from "@mui/material";
+import Grid from "@mui/material/Grid";
 
 const AboutCard = React.forwardRef((props, ref) => {
   const theme = useTheme();
@@ -40,41 +40,27 @@ const AboutCard = React.forwardRef((props, ref) => {
   };
 
   const textDetailStyle = {
-    display: "grid", // Change to grid
-    gridTemplateColumns: "1fr", // 1 column by default
-    gap: "40px",
     textAlign: "start",
     padding: "20px",
-
-    "@media (min-width: 601px)": {
-      gridTemplateColumns: "1fr 1fr", // 2 columns on medium screens
-    },
-
-    "@media (min-width: 968px)": {
-      gridTemplateColumns: "1fr 1fr 1fr", // 2 columns on medium screens
-    },
-  };
-
-  const skillsSectionStyle = {
-    ...textSectionStyle,
-    gap: "50px",
+    width: "100%", // Make the grid items fill up the full width
   };
 
   return (
-    // <GsapReveal ref={ref}>
-
-      <Box sx={aboutCardStyle} id="aboutCard" ref={ref}>
-          <Typography variant="h4" gutterBottom color="primary">
-            About Me
-          </Typography>
-        <Box sx={textDetailStyle}>
-          {/* Map through AboutArray and render each text */}
-          {AboutArray.map((detail, index) => (
-            <AboutDetail key={index} aboutDetail={detail}  />
-          ))}
-        </Box>
+    <Box sx={aboutCardStyle} id="aboutCard" ref={ref}>
+      <Typography variant="h4" gutterBottom color="primary">
+        About Me
+      </Typography>
+<Grid container spacing={2} justifyContent="center" sx={textDetailStyle}>
+  {/* Map through AboutArray and render each text */}
+  {AboutArray.map((detail, index) => (
+    <Grid item xs={12} sm={6} md={4} key={index}>
+      <Box sx={{ margin: "10px" }}> {/* Apply margin to the container */}
+        <AboutDetail aboutDetail={detail} />
       </Box>
-    // </GsapReveal>
+    </Grid>
+  ))}
+</Grid>
+    </Box>
   );
 });
 

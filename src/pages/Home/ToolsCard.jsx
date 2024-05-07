@@ -14,15 +14,12 @@ const AboutCard = React.forwardRef((props, ref) => {
     display: "flex",
     flexDirection: "column",
     flex: 1,
-    gap: "20px",
+    gap: "10px",
     alignItems: "start",
     paddingTop: "100px",
     paddingBottom: "40px",
     margin: "0 auto",
-    "@media (max-width: 1000px)": {
-      flexDirection: "column",
-      gap: "80px",
-    },
+
   };
 
   const textSectionStyle = {
@@ -39,42 +36,20 @@ const AboutCard = React.forwardRef((props, ref) => {
     border: `2px solid ${theme.palette.outline.main}`,
   };
 
-  const textDetailStyle = {
-    display: "grid", // Change to grid
-    gridTemplateColumns: "1fr", // 1 column by default
-    gap: "40px",
-    textAlign: "start",
-    padding: "20px",
-
-    "@media (min-width: 601px)": {
-      gridTemplateColumns: "1fr 1fr", // 2 columns on medium screens
-    },
-
-    "@media (min-width: 968px)": {
-      gridTemplateColumns: "1fr 1fr 1fr", // 2 columns on medium screens
-    },
-  };
-
   const skillsSectionStyle = {
     ...textSectionStyle,
     gap: "50px",
   };
 
   return (
-    // <GsapReveal ref={ref}>
-
       <Box sx={aboutCardStyle} id="aboutCard" ref={ref}>
           <Typography variant="h4" gutterBottom color="primary">
-            About Me
+            Tools and Skills
           </Typography>
-        <Box sx={textDetailStyle}>
-          {/* Map through AboutArray and render each text */}
-          {AboutArray.map((detail, index) => (
-            <AboutDetail key={index} aboutDetail={detail}  />
-          ))}
+        <Box sx={skillsSectionStyle}>
+          <ToolsGrid />
         </Box>
       </Box>
-    // </GsapReveal>
   );
 });
 

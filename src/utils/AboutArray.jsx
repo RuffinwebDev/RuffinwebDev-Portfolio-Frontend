@@ -1,9 +1,34 @@
 const AboutArray = [
-  "I am a full-stack developer with 4 years of experience. My preferred development languages and frameworks include Python, Django, JavaScript, and React, with PostgreSQL and pgAdmin for database management.",
-  "I specialize in Python and backend development to create efficient and scalable data-centered solutions for applications.",
-  "Recently, I've been exploring JavaScript and TypeScript to develop accessible user interfaces and engaging experiences beyond simple HTML and CSS applications.",
-  "Experienced in database administration, I'm proficient with PostgreSQL for larger production-grade databases and SQLite for smaller file-based database solutions, ensuring data reliability and performance in both cases.",
-  "For smooth deployment and management of scalable infrastructure, I leverage various AWS services such as EC2, Lightsail, Elastic Beanstalk, API Gateway, Lambda, S3, CloudFront, Route 53, RDS, and DynamoDB.",
+  {
+    title: "Full Stack Development",
+    text: "With 4 years of experience, I cover both frontend and backend development, ensuring end-to-end solutions for various projects. My expertise spans from database design to UI implementation, making me proficient in delivering robust and scalable applications.",
+    icons: ["/media/dev.svg", "/media/web.svg"],
+  },
+  {
+    title: "Python/Django Backend",
+    text: "Specializing in Python and Django, I focus on building reliable backend systems that power data-intensive applications. My experience includes developing RESTful APIs, handling authentication, and optimizing database performance for efficient data management.",
+    icons: ["/media/python.svg", "/media/django.svg"],
+  },
+  {
+    title: "JavaScript/React Frontend",
+    text: "Exploring JavaScript and React, I craft interactive user interfaces and dynamic web applications. Leveraging modern frontend technologies, I prioritize user experience and accessibility to create engaging digital experiences.",
+    icons: ["/media/javascript.svg", "/media/react.svg"],
+  },
+  {
+    title: "Database Administration",
+    text: "Proficient in database administration, I manage PostgreSQL for large-scale production databases and SQLite for lightweight applications. My expertise ensures data reliability, performance, and security across diverse database environments.",
+    icons: ["/media/postgresql.svg", "/media/sqlite.svg"],
+  },
+  {
+    title: "Cloud Infrastructure Management",
+    text: "Leveraging AWS services like EC2, Lightsail, Elastic Beanstalk, and more, I streamline deployment and management of scalable infrastructure. From serverless architectures to containerized solutions, I optimize cloud resources for efficient operations.",
+    icons: ["/media/aws.svg", "/media/docker.svg"],
+  },
+  {
+    title: "Project Management",
+    text: "Experienced in project management using Jira and Scrum methodology, I facilitate team collaboration, sprint planning, and backlog grooming to deliver high-quality software products on time. By leveraging Jira's robust features, I track project progress, manage tasks, and adapt to changing requirements to ensure project success.",
+    icons: ["/media/jira.svg", "/media/scrum.svg"],
+  },
 ];
 
 export default AboutArray;

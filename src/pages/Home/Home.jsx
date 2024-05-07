@@ -3,6 +3,7 @@ import { useRef } from "react";
 import Box from "@mui/material/Box";
 import TitleCard from "./TitleCard.jsx";
 import AboutCard from "./AboutCard.jsx";
+import ToolsCard from "./ToolsCard.jsx";
 import ResumeCard from "./ResumeCard.jsx";
 import ProjectsCard from "./ProjectsCard.jsx";
 import ContactCard from "./ContactCard.jsx";
@@ -14,6 +15,7 @@ import Copyright from "../../components/Copyright/Copyright.jsx";
 const Home = () => {
   const titleRef = useRef(null);
   const aboutRef = useRef(null);
+  const toolsRef = useRef(null);
   const projectsRef = useRef(null);
   const resumeRef = useRef(null);
   const contactRef = useRef(null);
@@ -36,6 +38,7 @@ const Home = () => {
       <ImageBackground />
       <LinksAppBar
         titleRef={titleRef}
+        toolsRef={toolsRef}
         aboutRef={aboutRef}
         projectsRef={projectsRef}
         resumeRef={resumeRef}
@@ -45,6 +48,8 @@ const Home = () => {
         <TitleCard ref={titleRef} />
         <CardBorder />
         <AboutCard ref={aboutRef} />
+        <CardBorder />
+        <ToolsCard ref={toolsRef} />
         <CardBorder />
         <ProjectsCard ref={projectsRef} />
         <CardBorder />

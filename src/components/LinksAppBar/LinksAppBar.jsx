@@ -21,6 +21,7 @@ import Theme from "../../Theme.jsx";
 function LinksAppbar({
   titleRef,
   aboutRef,
+  toolsRef,
   projectsRef,
   resumeRef,
   contactRef,
@@ -36,6 +37,7 @@ function LinksAppbar({
 
   const sections = [
     { title: "About", link: aboutRef },
+    { title: "Tools", link: toolsRef },
     { title: "Projects", link: projectsRef },
     { title: "Resume", link: resumeRef },
     { title: "Contact", link: contactRef },
