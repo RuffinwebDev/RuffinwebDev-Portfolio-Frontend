@@ -75,7 +75,7 @@ const AboutDetail = forwardRef((props, ref) => {
               <img key={iconIndex} src={icon} alt={aboutDetail.title} {...getSkillIconStyle()} />
             ))}
           </Grid>
-            <Typography sx={detailTitleStyle}>{aboutDetail.title}</Typography>
+            <Typography sx={detailTitleStyle} variant="h6">{aboutDetail.title}</Typography>
             <Typography sx={detailTextStyle}>{aboutDetail.text}</Typography>
         </Grid>
     </Grid>

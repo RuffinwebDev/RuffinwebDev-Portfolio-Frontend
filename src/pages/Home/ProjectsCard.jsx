@@ -14,22 +14,22 @@ const ProjectsCard = forwardRef((props, ref) => {
     display: "flex",
     flexDirection: "column",
     flex: 1,
-    gap: "50px",
+    gap: "20px",
     alignItems: "start",
     maxWidth: "1600px",
     margin: "0 auto",
     paddingTop: "100px",
-    paddingBottom: "50px",
+    paddingBottom: "0",
 
     "@media (max-width: 1000px)": {
-      gap: "80px",
+      gap: "20px",
     },
   };
 
   return (
     <Box sx={projectsCardStyle} className="" id="projectsCard" ref={ref}>
-      <Typography variant="h5" gutterBottom color="primary">
-        My projects
+      <Typography variant="h4" gutterBottom color="primary">
+        My Projects
       </Typography>
 
       <Grid container spacing={2} justifyContent="center">

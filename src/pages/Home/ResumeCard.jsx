@@ -19,9 +19,9 @@ const ResumeCard = forwardRef((props, ref) => {
     border: `2px solid ${theme.palette.outline.main}`,
     backgroundColor: theme.palette.depth.main,
     borderRadius: "10px",
-    margin: "100px 0",
+    margin: "100px 0 0",
     "@media (max-width: 1280px)": {
-      margin: "80px 0",
+      margin: "40px 0",
     },
   };
 

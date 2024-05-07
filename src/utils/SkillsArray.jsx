@@ -38,22 +38,7 @@ const SkillsArray = [
   },
   // { name: 'Tailwind CSS', icon: '/media/tailwind.svg',  tagLink: 'https://tailwindcss.com/docs/installation'},
   // { name: 'Bootstrap', icon: '/media/bootstrap.svg',  tagLink: 'https://getbootstrap.com/'},
-  {
-    name: "PostgreSQL",
-    icon: "/media/postgresql.svg",
-    tagLink: "https://www.postgresql.org/about/",
-  },
-  {
-    name: "SQLite",
-    icon: "/media/sqlite.svg",
-    tagLink: "https://www.sqlite.org/about.html",
-  },
-  {
-    name: "Docker",
-    icon: "/media/docker.svg",
-    tagLink: "https://docs.docker.com/",
-  },
-  {
+   {
     name: "Nginx",
     icon: "/media/nginx.svg",
     tagLink: "https://www.nginx.com/solutions/",
@@ -69,10 +54,27 @@ const SkillsArray = [
     tagLink: "https://www.gnu.org/software/bash/manual/bash.html",
   },
   {
+    name: "SQLite",
+    icon: "/media/sqlite.svg",
+    tagLink: "https://www.sqlite.org/about.html",
+  },
+  {
+    name: "PostgreSQL",
+    icon: "/media/postgresql.svg",
+    tagLink: "https://www.postgresql.org/about/",
+  },
+
+  {
+    name: "Docker",
+    icon: "/media/docker.svg",
+    tagLink: "https://docs.docker.com/",
+  },
+  {
     name: "AWS",
     icon: "/media/aws.svg",
     tagLink: "https://aws.amazon.com/serverless/",
   },
+
 ];
 
 export default SkillsArray;

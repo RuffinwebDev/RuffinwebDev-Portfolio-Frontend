@@ -14,10 +14,10 @@ const AboutCard = React.forwardRef((props, ref) => {
     display: "flex",
     flexDirection: "column",
     flex: 1,
-    gap: "10px",
+    gap: "20px",
     alignItems: "start",
     paddingTop: "100px",
-    paddingBottom: "40px",
+    paddingBottom: "0",
     margin: "0 auto",
 
   };

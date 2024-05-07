@@ -28,15 +28,15 @@ const ToolsGrid = forwardRef((props, ref) => {
   const skillItemStyle = {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "start",
-    // alignItems: 'center'
-    alignItems: { xs: "center", sm: "start" },
+    justifyContent: "center",
+    alignItems: 'center',
+    // alignItems: { xs: "center", sm: "start" },
   };
 
   return (
     <Grid container spacing={2} justifyContent="center">
       {SkillsArray.map((skill, index) => (
-        <Grid item xs={6} sm={4} md={4} key={index} sx={skillItemStyle}>
+        <Grid item xs={6} sm={4} md={3} key={index} sx={skillItemStyle}>
           <Link href={skill.tagLink} target="_blank">
             <img src={skill.icon} alt={skill.name} {...getSkillIconStyle()} />
             <Typography sx={{ alignSelf: "center" }}>{skill.name}</Typography>

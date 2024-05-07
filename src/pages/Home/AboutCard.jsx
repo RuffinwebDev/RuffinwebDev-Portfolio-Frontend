@@ -17,11 +17,11 @@ const AboutCard = React.forwardRef((props, ref) => {
     gap: "20px",
     alignItems: "start",
     paddingTop: "100px",
-    paddingBottom: "40px",
+    paddingBottom: "0",
     margin: "0 auto",
     "@media (max-width: 1000px)": {
       flexDirection: "column",
-      gap: "80px",
+      gap: "20px",
     },
   };
 
@@ -79,3 +79,5 @@ const AboutCard = React.forwardRef((props, ref) => {
 });
 
 export default AboutCard;
+
+//

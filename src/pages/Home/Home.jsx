@@ -48,13 +48,9 @@ const Home = () => {
         <TitleCard ref={titleRef} />
         <CardBorder />
         <AboutCard ref={aboutRef} />
-        <CardBorder />
         <ToolsCard ref={toolsRef} />
-        <CardBorder />
         <ProjectsCard ref={projectsRef} />
-        <CardBorder />
         <ResumeCard ref={resumeRef} />
-        <CardBorder />
         <ContactCard ref={contactRef} />
         <Copyright />
       </Box>
