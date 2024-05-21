@@ -30,14 +30,11 @@ const SkillsArray = [
     icon: "/media/css.svg",
     tagLink: "https://developer.mozilla.org/en-US/docs/Web/CSS",
   },
-  // { name: 'SASS', icon: '/media/sass.svg',  tagLink: 'https://sass-lang.com/'},
   {
     name: "Material UI",
     icon: "/media/mui.svg",
     tagLink: "https://mui.com/material-ui/getting-started/",
   },
-  // { name: 'Tailwind CSS', icon: '/media/tailwind.svg',  tagLink: 'https://tailwindcss.com/docs/installation'},
-  // { name: 'Bootstrap', icon: '/media/bootstrap.svg',  tagLink: 'https://getbootstrap.com/'},
    {
     name: "Nginx",
     icon: "/media/nginx.svg",
@@ -74,7 +71,11 @@ const SkillsArray = [
     icon: "/media/aws.svg",
     tagLink: "https://aws.amazon.com/serverless/",
   },
-
+  {
+    name: "Jira",
+    icon: "/media/jira.svg",
+    tagLink: "https://aws.amazon.com/serverless/",
+  },
 ];
 
 export default SkillsArray;

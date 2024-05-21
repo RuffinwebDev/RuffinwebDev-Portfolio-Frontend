@@ -21,7 +21,7 @@ const AboutArray = [
   },
   {
     title: "Cloud Infrastructure Management",
-    text: "Leveraging AWS services like EC2, Lightsail, Elastic Beanstalk, and more, I streamline deployment and management of scalable infrastructure. From serverless architectures to containerized solutions, I optimize cloud resources for efficient operations.",
+    text: "Leveraging AWS services like EC2, S3, CloudFront, IAM, Route53 and more, I streamline deployment and management of scalable infrastructure. From serverless architectures to containerized solutions, I optimize cloud resources for efficient operations.",
     icons: ["/media/aws.svg", "/media/docker.svg"],
   },
   {
