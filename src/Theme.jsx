@@ -23,7 +23,7 @@ let RuffinWebTheme = createTheme({
   typography: {
     fontFamily: "Tahoma, Geneva, sans-serif",
     fontSize: 15,
-    h1: { fontSize: 150, fontFamily: "FreeMono, monospace" },
+    h1: { fontSize: 100, fontFamily: "FreeMono, monospace" },
     h2: { fontSize: 80 },
     body1: { fontWeight: 500 },
     p: { fontWeight: 500 },

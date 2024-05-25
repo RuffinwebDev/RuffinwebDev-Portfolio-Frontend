@@ -27,9 +27,9 @@ const Home = () => {
     maxWidth: "1600px",
     minHeight: "100vh",
     padding: "15px",
-    gap: "100px",
+    gap: "200px",
     "@media (max-width: 1000px)": {
-      gap: "50px",
+      gap: "90px",
     },
   };
 
@@ -45,7 +45,7 @@ const Home = () => {
         contactRef={contactRef}
       />
       <Box sx={homePageStyle}>
-        <TitleCard ref={titleRef} />
+        <TitleCard ref={titleRef} myWorkLink={projectsRef} />
         <CardBorder />
         <AboutCard ref={aboutRef} />
         <ToolsCard ref={toolsRef} />

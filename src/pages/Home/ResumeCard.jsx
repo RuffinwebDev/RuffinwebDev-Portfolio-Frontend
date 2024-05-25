@@ -16,12 +16,11 @@ const ResumeCard = forwardRef((props, ref) => {
     flexDirection: "column",
     alignItems: "center",
     padding: "20px",
-    border: `2px solid ${theme.palette.outline.main}`,
-    backgroundColor: theme.palette.depth.main,
+    // borderTop: `2px solid ${theme.palette.outline.main}`,
     borderRadius: "10px",
-    margin: "100px 0 0",
+    margin: "0",
     "@media (max-width: 1280px)": {
-      margin: "40px 0",
+    margin: "0",
     },
   };
 

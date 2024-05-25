@@ -37,13 +37,9 @@ function ContactForm(props) {
         <Typography component="h1" variant="h5" color="primary">
           Contact Me
         </Typography>
-<Typography component="h1" variant="subtitle2" color="primary">
-  I am currently seeking a full-time position in backend or frontend development. Feel free to reach out to me if you have any opportunities available or if you would like to discuss potential collaborations!
-</Typography>
-
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 autoComplete="given-name"
@@ -52,21 +48,8 @@ function ContactForm(props) {
                 error={Boolean(errors.firstName)}
                 fullWidth
                 id="firstName"
-                label="First Name"
+                label="Name"
                 value={formData.firstName}
-                onChange={(e) => handleChange(e, { type: "string" })}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                required
-                error={Boolean(errors.lastName)}
-                fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
-                autoComplete="family-name"
-                value={formData.lastName}
                 onChange={(e) => handleChange(e, { type: "string" })}
               />
             </Grid>

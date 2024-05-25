@@ -18,8 +18,6 @@ const ProjectsCard = forwardRef((props, ref) => {
     alignItems: "start",
     maxWidth: "1600px",
     margin: "0 auto",
-    paddingTop: "100px",
-    paddingBottom: "0",
 
     "@media (max-width: 1000px)": {
       gap: "20px",

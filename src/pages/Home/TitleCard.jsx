@@ -3,16 +3,21 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import GsapReveal from "./GsapReveal.jsx";
 import { useTheme } from "@mui/material";
+import Button from "@mui/material/Button";
 
 const TitleCard = forwardRef((props, ref) => {
   const theme = useTheme();
 
   const titleCardStyle = {
+    display: "flex",
+    flexDirection: "column",
+    gap: "0px",
     margin: "50px 0",
+    alignItems: "center",
     textAlign: "center",
-    padding: "160px 0",
+    padding: "80px 0",
     borderRadius: "10px",
-    border: `2px solid ${theme.palette.outline.main}`,
+    width: "auto",
 
     "@media (max-width: 1280px)": {
       padding: "120px 0",
@@ -23,6 +28,11 @@ const TitleCard = forwardRef((props, ref) => {
       margin: "10px 0",
     },
   };
+
+  const titleLinkCard = {
+        margin : "100px 0",
+        width: "200px",
+  }
 
   return (
     <GsapReveal ref={ref}>
@@ -50,6 +60,16 @@ const TitleCard = forwardRef((props, ref) => {
           </Box>
           PostgreSQL
         </Typography>
+
+        <Button sx={titleLinkCard} variant="outlined"
+                 onClick={() => {
+                    myWorkLink.scrollIntoView({
+                      behavior: "smooth",
+                    });
+                }}>
+          See My Work
+
+        </Button>
       </Box>
     </GsapReveal>
   );
