@@ -1,8 +1,6 @@
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
-// Define common theme colors. This is useful for when I want to include dark and light modes.
-// I can override the primary and secondary colors for example depending on which color mode is being used without
-// Redefining the colors that are the same across both modes such as transparent or active.
+// Define common theme colors.
 const commonColors = {
   textPrimary: "#ffffff",
   textSecondary: "#000000",
@@ -40,13 +38,18 @@ let RuffinWebTheme = createTheme({
     MuiTypography: {
       styleOverrides: {
         root: { color: commonColors.textPrimary },
-        notchedOutline: { borderColor: commonColors.textPrimary },
       },
     },
     MuiOutlinedInput: {
       styleOverrides: {
-        root: { color: commonColors.textPrimary },
-        notchedOutline: { borderColor: commonColors.textPrimary },
+        root: {
+          '&:hover .MuiOutlinedInput-notchedOutline': {
+            borderColor: commonColors.backgroundOutline, // Outline color on hover
+          },
+        },
+        notchedOutline: {
+          borderColor: commonColors.textPrimary,
+        },
       },
     },
     MuiInputLabel: {

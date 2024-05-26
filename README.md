@@ -85,3 +85,6 @@ Feel free to submit a pull request or clone this repository to contribute to the
 This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. To view a copy of this license, visit [http://creativecommons.org/licenses/by-nc/4.0/](http://creativecommons.org/licenses/by-nc/4.0/) or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 Thank you for visiting the Ruffinweb frontend repository. If you have any questions, feel free to contact me.
+
+
+git commit -m "Standardized spacing for the title, contact and resume cards. Fixed validation not appearing for the email address field. Updated the title button to navigate to my GitHub page and set the card to take up the full visible height of the viewport. Replaced the black color effect of the form fields on hover. Buttons rendered with the NavbarLinkSection component need to be fixed. They sometimes close the menu without firing the onclick event which should scroll the page to the appropriate section. The contact form still needs protection from spam and bots."

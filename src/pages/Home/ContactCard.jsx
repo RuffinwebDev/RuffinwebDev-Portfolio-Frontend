@@ -11,14 +11,12 @@ const ContactCard = forwardRef((props, ref) => {
   const { gsapRef } = props;
   const [formData, setFormData] = useState({
     firstName: "",
-    lastName: "",
     email: "",
     message: "",
   });
 
   const [errors, setErrors] = useState({
     firstName: "",
-    lastName: "",
     email: "",
     message: "",
   });
@@ -40,17 +38,14 @@ const ContactCard = forwardRef((props, ref) => {
     });
   };
 
-  const contactFormStyle = {
+  const contactCardStyle = {
     padding: "20px",
     borderRadius: "10px",
-    margin: "0",
-    "@media (max-width: 1280px)": {
-      margin: "0",
-    },
+    margin: "60px 0 0",
   };
   return (
     <div ref={ref}>
-      <Box sx={contactFormStyle} ref={ref}>
+      <Box sx={contactCardStyle} ref={ref}>
         <ContactForm
           formData={formData}
           handleChange={HandleChange({ formData, setFormData, setErrors })}

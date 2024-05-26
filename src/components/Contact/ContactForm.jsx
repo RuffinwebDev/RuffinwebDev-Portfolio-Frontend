@@ -24,11 +24,9 @@ function ContactForm(props) {
 
       <Box
         sx={{
-          paddingTop: "70px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          padding: "20px",
         }}
       >
         <Avatar sx={{ m: 1, bgcolor: "active.main" }}>
@@ -37,6 +35,7 @@ function ContactForm(props) {
         <Typography component="h1" variant="h5" color="primary">
           Contact Me
         </Typography>
+
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
@@ -48,7 +47,7 @@ function ContactForm(props) {
                 error={Boolean(errors.firstName)}
                 fullWidth
                 id="firstName"
-                label="Name"
+                label="First Name"
                 value={formData.firstName}
                 onChange={(e) => handleChange(e, { type: "string" })}
               />

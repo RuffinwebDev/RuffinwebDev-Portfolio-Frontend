@@ -8,7 +8,6 @@ const sendData = async (formData) => {
     const senderRequestBody = {
       message: formData.message,
       first_name: formData.firstName,
-      last_name: formData.lastName,
       email: formData.email,
       date: formData.date,
     };

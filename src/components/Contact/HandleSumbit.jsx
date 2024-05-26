@@ -22,14 +22,6 @@ const HandleSubmit = async (
   } else {
     setErrors((prevErrors) => ({ ...prevErrors, firstName: false }));
   }
-
-  if (formData.lastName.trim() === "") {
-    setErrors((prevErrors) => ({ ...prevErrors, lastName: true }));
-    return;
-  } else {
-    setErrors((prevErrors) => ({ ...prevErrors, lastName: false }));
-  }
-
   if (formData.message.trim() === "") {
     setErrors((prevErrors) => ({ ...prevErrors, message: true }));
     return;
@@ -48,7 +40,6 @@ const HandleSubmit = async (
   // Error checks before submission
   if (
     !errors.firstName &&
-    !errors.lastName &&
     !errors.message &&
     !errors.email
   ) {
@@ -60,7 +51,6 @@ const HandleSubmit = async (
       // Clear form data after successful submission
       setFormData({
         firstName: "",
-        lastName: "",
         email: "",
         message: "",
       });

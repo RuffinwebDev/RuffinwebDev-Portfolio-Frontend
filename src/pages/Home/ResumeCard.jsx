@@ -15,13 +15,12 @@ const ResumeCard = forwardRef((props, ref) => {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: "20px",
-    // borderTop: `2px solid ${theme.palette.outline.main}`,
     borderRadius: "10px",
-    margin: "0",
-    "@media (max-width: 1280px)": {
-    margin: "0",
-    },
+    padding: "20px",
+    margin: "60px 0 0",
+    // "@media (max-width: 1280px)": {
+    // margin: "0",
+    // },
   };
 
   const downloadResumeStyle = {

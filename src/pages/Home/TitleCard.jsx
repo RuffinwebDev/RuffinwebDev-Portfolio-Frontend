@@ -1,9 +1,10 @@
-import React, { forwardRef, useEffect } from "react";
+import React, { forwardRef } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import GsapReveal from "./GsapReveal.jsx";
 import { useTheme } from "@mui/material";
 import Button from "@mui/material/Button";
+import Link from "@mui/material/Link";
 
 const TitleCard = forwardRef((props, ref) => {
   const theme = useTheme();
@@ -12,26 +13,27 @@ const TitleCard = forwardRef((props, ref) => {
     display: "flex",
     flexDirection: "column",
     gap: "0px",
-    margin: "50px 0",
     alignItems: "center",
+    justifyContent: "center",  // Centering the content vertically
     textAlign: "center",
-    padding: "80px 0",
     borderRadius: "10px",
-    width: "auto",
+    width: "100%",
+    height: "85vh",  // Full height of the viewport
+    padding: "0 20px",  // Add padding for responsiveness
 
     "@media (max-width: 1280px)": {
-      padding: "120px 0",
-      margin: "30px 0",
-    },
-    "@media (max-width: 435px)": {
-      padding: "120px 0",
-      margin: "10px 0",
+      margin: "0",
     },
   };
 
   const titleLinkCard = {
-        margin : "100px 0",
-        width: "200px",
+    margin: "50px 0 0",  // Adjusted margin for better spacing
+    width: "200px",
+    textDecoration: "none",
+  }
+
+  const titleLink = {
+    textDecoration: "none",
   }
 
   return (
@@ -61,14 +63,10 @@ const TitleCard = forwardRef((props, ref) => {
           PostgreSQL
         </Typography>
 
-        <Button sx={titleLinkCard} variant="outlined"
-                 onClick={() => {
-                    myWorkLink.scrollIntoView({
-                      behavior: "smooth",
-                    });
-                }}>
-          See My Work
-
+        <Button sx={titleLinkCard} variant="outlined">
+          <Link sx={titleLink} href="https://github.com/ruffinweb?tab=repositories" target="_blank" variant="body2">
+            View My Work
+          </Link>
         </Button>
       </Box>
     </GsapReveal>
