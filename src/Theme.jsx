@@ -44,11 +44,11 @@ let RuffinWebTheme = createTheme({
       styleOverrides: {
         root: {
           '&:hover .MuiOutlinedInput-notchedOutline': {
-            borderColor: commonColors.backgroundOutline, // Outline color on hover
+            borderColor: commonColors.textPrimary, // Outline color on hover
           },
         },
         notchedOutline: {
-          borderColor: commonColors.textPrimary,
+          borderColor: commonColors.backgroundOutline,
         },
       },
     },
