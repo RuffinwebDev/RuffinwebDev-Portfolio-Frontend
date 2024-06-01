@@ -11,15 +11,15 @@ const ToolsGrid = forwardRef((props, ref) => {
     "(min-width: 601px) and (max-width: 960px)",
   );
   const getSkillIconStyle = () => {
-    let width = 100; // Default width
-    let height = 100; // Default height
+    let width = 80; // Default width
+    let height = 80; // Default height
 
     if (isSmallScreen) {
-      width = 75; // For small screens
-      height = 75; // For small screens
+      width = 55; // For small screens
+      height = 55; // For small screens
     } else if (isMediumScreen) {
-      width = 75; // For medium screens
-      height = 75;
+      width = 65; // For medium screens
+      height = 65;
     }
 
     return { width, height };
