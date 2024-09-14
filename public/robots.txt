@@ -1,3 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+
+Started the transition to TypeScript. Most components and files have only been given basic interfaces. NavbarLink components buttons need to be fixed, the button can be pressed and closes without navigating to the selected section if clicked too close to the edge. Landing page scroll-to for NavbarLink components stop too far past the selected element. Footer links need to be updated to real pages, footer info component needs to be created.
