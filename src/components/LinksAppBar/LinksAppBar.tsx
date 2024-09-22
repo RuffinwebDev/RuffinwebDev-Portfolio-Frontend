@@ -13,16 +13,16 @@ import {
 import { AccountCircle, Menu as MenuIcon } from "@mui/icons-material";
 import { useTheme } from "@mui/material";
 import NavbarLinkSection from "./NavbarLinkSection";
-import NavbarLinkSocial from "./NavbarLinkSocial";
 import { Link } from "react-router-dom";
 import NavigationMenuSocial from "./NavgationMenuSocial";
+import Button from "@mui/material/Button";
 
 // Define the prop types
 type LinksAppbarProps = {
   titleRef: React.RefObject<HTMLElement>; // unneeded unless the title element is not located at the top of the page.
   aboutRef: React.RefObject<HTMLElement>;
   toolsRef: React.RefObject<HTMLElement>;
-  projectsRef: React.RefObject<HTMLElement>;
+  experienceRef: React.RefObject<HTMLElement>;
   resumeRef: React.RefObject<HTMLElement>;
 };
 
@@ -30,31 +30,29 @@ const LinksAppbar: React.FC<LinksAppbarProps> = ({
   titleRef,
   aboutRef,
   toolsRef,
-  projectsRef,
+  experienceRef,
   resumeRef,
 }) => {
   const theme = useTheme();
 
   // Define reusable state for nav and user menu
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null,
-  );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null,
-  );
+  const [anchorElSocial, setAnchorElSocial] =
+    React.useState<null | HTMLElement>(null);
+  const [anchorElSection, setAnchorElSection] =
+    React.useState<null | HTMLElement>(null);
 
   // Define social and section links
   const socialPages = [
     { title: "CONTACT", link: "contact" },
     { title: "BLOG", link: "blog" },
-    { title: "SERVICES", link: "services" },
+    { title: "SERVICES", link: "services" }, // Chang back to services
   ];
 
   const sections = [
-    { title: "About", link: aboutRef },
-    { title: "Tools", link: toolsRef },
-    { title: "Projects", link: projectsRef },
-    { title: "Resume", link: resumeRef },
+    { title: "About", ref: aboutRef },
+    { title: "Skills", ref: toolsRef },
+    { title: "Experience", ref: experienceRef },
+    { title: "Resume", ref: resumeRef },
   ];
 
   // Common event handlers
@@ -90,6 +88,7 @@ const LinksAppbar: React.FC<LinksAppbarProps> = ({
     >
       <Container maxWidth="lg">
         <Toolbar disableGutters>
+          {/* Desktop Brand Logo/Home Link */}
           <Link to="/" style={{ textDecoration: "none" }}>
             <Typography
               variant="h5"
@@ -109,20 +108,24 @@ const LinksAppbar: React.FC<LinksAppbarProps> = ({
             </Typography>
           </Link>
 
-          {/* Mobile Navigation */}
+          {/* Mobile Social Links Menu */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <Tooltip title="Open link to">
-              <IconButton onClick={handleClick(setAnchorElNav)} sx={{ p: 0 }}>
+              <IconButton
+                onClick={handleClick(setAnchorElSocial)}
+                sx={{ p: 0 }}
+              >
                 <AccountCircle />
               </IconButton>
             </Tooltip>
             <NavigationMenuSocial
               items={socialPages}
-              anchorEl={anchorElNav}
-              onClose={handleClose(setAnchorElNav)}
+              anchorEl={anchorElSocial}
+              onClose={handleClose(setAnchorElSocial)}
             />
           </Box>
 
+          {/* Mobile Brand Logo/Home Link */}
           <Link to="/" style={{ textDecoration: "none" }}>
             <Typography
               variant="h5"
@@ -143,47 +146,83 @@ const LinksAppbar: React.FC<LinksAppbarProps> = ({
             </Typography>
           </Link>
 
-          {/* Desktop Social Links */}
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {socialPages.map((page, index) => (
-              <NavbarLinkSocial
-                key={index}
-                text={page.title}
-                href={page.link}
-                onClick={handleClose(setAnchorElNav)}
-              />
-            ))}
-          </Box>
-
-          {/* Page Section Menu for Mobile */}
+          {/* Mobile Page Section Menu*/}
           <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
             <Tooltip title="Navigate to">
-              <IconButton onClick={handleClick(setAnchorElUser)} sx={{ p: 0 }}>
+              <IconButton
+                onClick={handleClick(setAnchorElSection)}
+                sx={{ p: 0 }}
+              >
                 <MenuIcon />
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: "45px" }}
-              anchorEl={anchorElUser}
-              open={Boolean(anchorElUser)}
-              onClose={handleClose(setAnchorElUser)}
+              id="menu-appbar"
+              anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+              transformOrigin={{ vertical: "top", horizontal: "right" }}
+              sx={{ mt: "20px" }}
+              anchorEl={anchorElSection}
+              open={Boolean(anchorElSection)}
+              onClose={handleClose(setAnchorElSection)}
             >
               {sections.map((section, index) => (
-                <MenuItem key={index} onClick={handleClose(setAnchorElUser)}>
-                  <NavbarLinkSection
-                    text={section.title}
-                    onClick={() => {
-                      handleClose(setAnchorElNav)();
-                      if (section.link) {
-                        section.link.current?.scrollIntoView({
-                          behavior: "smooth",
-                        });
-                      }
+                <MenuItem sx={{ margin: "0", padding: "0" }} key={index}>
+                  <Button
+                    style={{
+                      textDecoration: "none",
+                      width: "100%",
+                      textAlign: "start",
+                      padding: "6px 16px",
                     }}
-                  />
+                    onClick={() => {
+                      const sectionRef = section.ref; // Use the section's ref
+
+                      const yOffset = -100; // Adjust this value based on your fixed header height
+                      if (sectionRef && sectionRef.current) {
+                        const y =
+                          sectionRef.current.getBoundingClientRect().top +
+                          window.pageYOffset +
+                          yOffset;
+                        window.scrollTo({ top: y, behavior: "smooth" });
+                      }
+
+                      handleClose(setAnchorElSection)(); // Close the menu after clicking
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        margin: "0",
+                        padding: "0",
+                        color: "#000000",
+                        width: "100%",
+                        textDecoration: "none",
+                      }}
+                    >
+                      {section.title}
+                    </Typography>
+                  </Button>
                 </MenuItem>
               ))}
             </Menu>
+          </Box>
+
+          {/* Desktop Social Links */}
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            {socialPages.map((page, index) => (
+              <Link
+                style={{
+                  textDecoration: "none",
+                  padding: "10px",
+                  // color: "${theme.palette.primary.main}", // ???
+                  color: `${theme.palette.primary.light}`,
+                }}
+                key={index}
+                to={page.link}
+                onClick={handleClose(setAnchorElSocial)}
+              >
+                {page.title}
+              </Link>
+            ))}
           </Box>
 
           {/* Desktop Section Links */}
@@ -191,8 +230,8 @@ const LinksAppbar: React.FC<LinksAppbarProps> = ({
             sx={{
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
-              justifyContent: "flex-end",
               gap: "15px",
+              justifyContent: "flex-end",
             }}
           >
             {sections.map((section, index) => (
@@ -200,8 +239,20 @@ const LinksAppbar: React.FC<LinksAppbarProps> = ({
                 key={index}
                 text={section.title}
                 onClick={() => {
-                  handleClose(setAnchorElNav)();
-                  section.link?.current?.scrollIntoView({ behavior: "smooth" });
+                  handleClose(setAnchorElSection)();
+
+                  // Adjust the scroll position manually
+                  const sectionRef = section.ref;
+                  const yOffset = -100;
+
+                  if (sectionRef && sectionRef.current) {
+                    const y =
+                      sectionRef.current.getBoundingClientRect().top +
+                      window.pageYOffset +
+                      yOffset;
+
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                  }
                 }}
               />
             ))}

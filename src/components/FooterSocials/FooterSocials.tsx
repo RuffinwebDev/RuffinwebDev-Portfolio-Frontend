@@ -1,7 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
-import SocialsArray from "../../utils/SocialsArray";
+import SocialsArray from "../../config/socialMediaLinks";
 import { Link } from "@mui/material";
 
 const FooterSocials: React.FC = () => {

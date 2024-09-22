@@ -5,7 +5,7 @@ import { useTheme } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 
 interface FooterLinksProps {
-  links: typeof footerLinks;
+  links: typeof FooterLinks;
 }
 
 const FooterLinks: React.FC<FooterLinksProps> = ({ links }) => {
@@ -46,7 +46,7 @@ const FooterLinks: React.FC<FooterLinksProps> = ({ links }) => {
         <Box key={group.title} sx={footerLinkGroupStyle}>
           <Typography
             sx={{ color: `${theme.palette.outline.main}` }}
-            variant="h6"
+            variant="p"
           >
             {group.title}
           </Typography>
@@ -54,7 +54,7 @@ const FooterLinks: React.FC<FooterLinksProps> = ({ links }) => {
             <Link to={link.url} key={link.label}>
               <Typography
                 sx={{ color: `${theme.palette.primary.light}` }}
-                variant="h6"
+                variant="p"
               >
                 {link.label}
               </Typography>

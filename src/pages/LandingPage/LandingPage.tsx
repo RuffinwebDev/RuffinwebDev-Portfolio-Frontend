@@ -9,12 +9,12 @@ import ProjectsCard from "./ProjectsCard";
 
 const LandingPage: React.FC = () => {
   // Use the useOutletContext to access the refs passed from AppContainer
-  const { titleRef, aboutRef, toolsRef, projectsRef, resumeRef } =
+  const { titleRef, aboutRef, toolsRef, experienceRef, resumeRef } =
     useOutletContext<{
       titleRef: React.RefObject<HTMLDivElement>;
       aboutRef: React.RefObject<HTMLDivElement>;
       toolsRef: React.RefObject<HTMLDivElement>;
-      projectsRef: React.RefObject<HTMLDivElement>;
+      experienceRef: React.RefObject<HTMLDivElement>;
       resumeRef: React.RefObject<HTMLDivElement>;
     }>();
 
@@ -27,7 +27,7 @@ const LandingPage: React.FC = () => {
     }
   }, [location]);
 
-  const homePageStyle: SxProps<Theme> = {
+  const landingPageStyle: SxProps<Theme> = {
     display: "flex",
     flexDirection: "column",
     flex: 1,
@@ -42,11 +42,11 @@ const LandingPage: React.FC = () => {
 
   return (
     <Box>
-      <Box sx={homePageStyle}>
+      <Box sx={landingPageStyle}>
         <TitleCard ref={titleRef} />
         <AboutCard ref={aboutRef} />
         <ToolsCard ref={toolsRef} />
-        <ProjectsCard ref={projectsRef} />
+        <ProjectsCard ref={experienceRef} />
         <ResumeCard ref={resumeRef} />
       </Box>
     </Box>

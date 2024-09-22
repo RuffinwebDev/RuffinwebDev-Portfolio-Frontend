@@ -8,6 +8,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import Typography from "@mui/material/Typography";
 import GsapReveal from "../../pages/LandingPage/GsapReveal";
@@ -21,7 +22,6 @@ function ContactForm(props) {
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
-
       <Box
         sx={{
           display: "flex",
@@ -30,7 +30,7 @@ function ContactForm(props) {
         }}
       >
         <Avatar sx={{ m: 1, bgcolor: "active.main" }}>
-          <MailOutlineIcon />
+          <AlternateEmailIcon />
         </Avatar>
         <Typography component="h1" variant="h5" color="primary">
           Contact Me
@@ -92,15 +92,6 @@ function ContactForm(props) {
           >
             {submitting ? "Sending..." : "Send Message"}
           </Button>
-          <Grid container justifyContent="flex-end">
-            <Grid item>
-              {/*<a href="mailto:contact@ruffinweb.com">Email me directly</a>*/}
-              <Typography>
-                <a href="mailto:contact@ruffinweb.com">Or email me directly</a>{" "}
-                contact@ruffinweb.com
-              </Typography>
-            </Grid>
-          </Grid>
         </Box>
       </Box>
       <SubmitSnackbar

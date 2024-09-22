@@ -26,7 +26,7 @@ const TitleCard = forwardRef<HTMLDivElement, TitleCardProps>(
   (
     {
       title = "Elijah Ruffin",
-      subtitle = "Full-Stack Developer & Tech Lead",
+      subtitle = "Full-Stack Developer",
       description = "Washington D.C.",
       buttonText = "View My Work",
       buttonLink = "https://github.com/ruffinweb?tab=repositories",

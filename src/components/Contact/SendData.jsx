@@ -1,9 +1,12 @@
 const sendData = async (formData) => {
   try {
     // Define the API endpoint URLs
-    const createContactApiUrl = "ec2-3-95-23-176.compute-1.amazonaws.com:8000/api/sender/";
-    const createMessageApiUrl = "ec2-3-95-23-176.compute-1.amazonaws.com:8000/api/message/";
-    const sendEmailApiUrl = "ec2-3-95-23-176.compute-1.amazonaws.com:8000/api/send-email"; // Why don't I need the trailing slash here?
+    const createContactApiUrl =
+      "ec2-3-95-23-176.compute-1.amazonaws.com:8000/api/sender/";
+    const createMessageApiUrl =
+      "ec2-3-95-23-176.compute-1.amazonaws.com:8000/api/message/";
+    const sendEmailApiUrl =
+      "ec2-3-95-23-176.compute-1.amazonaws.com:8000/api/send-email"; // Why don't I need the trailing slash here?
 
     const senderRequestBody = {
       message: formData.message,
@@ -46,7 +49,7 @@ const sendData = async (formData) => {
       const messageData = await messageResponse.json();
       const emailData = await emailResponse.json();
 
-      // console.log("Blog form details saved successfully:", senderData);
+      // console.log("Info form details saved successfully:", senderData);
       // console.log("Message details saved successfully:", messageData);
       // console.log("Reply email sent successfully:", emailData);
 

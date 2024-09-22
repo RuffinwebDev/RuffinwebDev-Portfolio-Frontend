@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import ReturnButtons from "../../components/ReturnButtons/ReturnButtons";
 import Typography from "@mui/material/Typography";
 
-export const Blog = React.forwardRef((props, red) => {
+export const Blog = React.forwardRef((props, ref) => {
   const theme = useTheme();
 
   const blogsPageStyle = {
@@ -24,7 +24,7 @@ export const Blog = React.forwardRef((props, red) => {
 
   return (
     <Box sx={blogsPageStyle}>
-      <Typography>Blog Information Incoming</Typography>
+      <Typography>Blog Information Coming Soon</Typography>
     </Box>
   );
 });

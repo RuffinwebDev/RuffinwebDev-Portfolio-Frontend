@@ -1,13 +1,13 @@
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { ReactNode } from "react";
 
-interface Social {
+interface socialMediaLinksProps {
   name: string;
   icon: string;
   url: string;
 }
 
-const SocialsArray: Social[] = [
+const socialMediaLinks: socialMediaLinksProps[] = [
   {
     name: "X",
     icon: "/media/twitter.svg",
@@ -21,22 +21,12 @@ const SocialsArray: Social[] = [
   {
     name: "LinkenIn",
     icon: "/media/linkedin.svg",
-    url: "https://docs.python.org/3/",
+    url: "https://www.linkedin.com/in/elijah-ruffin-2400a8216/",
   },
   {
     name: "Github",
     icon: "/media/github.svg",
-    url: "https://docs.python.org/3/",
-  },
-  {
-    name: "Instagram",
-    icon: "/media/instagram.svg",
-    url: "https://docs.python.org/3/",
-  },
-  {
-    name: "Tiktok",
-    icon: "/media/tiktok.svg",
-    url: "https://docs.python.org/3/",
+    url: "https://github.com/ruffinweb/",
   },
   {
     name: "Discord",
@@ -45,4 +35,4 @@ const SocialsArray: Social[] = [
   },
 ];
 
-export default SocialsArray;
+export default socialMediaLinks;

@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import AboutArray from "../../utils/AboutArray";
+import aboutContent from "../../config/aboutContent";
 import Link from "@mui/material/Link";
 import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material";
@@ -30,9 +30,9 @@ const AboutDetail = forwardRef((props, ref) => {
 
   const detailItemStyle = {
     display: "flex",
-    flexGrow: '100',
+    flexGrow: "100",
     flexDirection: "column",
-    justifyContent: 'center',
+    justifyContent: "center",
     gap: "10px",
     alignItems: "center",
     margin: "0 auto",
@@ -41,16 +41,14 @@ const AboutDetail = forwardRef((props, ref) => {
     padding: "15px",
     height: "100%", // Ensure each project component occupies the same height
     backgroundColor: theme.palette.depth.main,
-    textAlign: 'center'
-
+    textAlign: "center",
   };
 
   const detailIconsStyle = {
     display: "flex",
     flexDirection: "row",
-    justifyContent: 'center',
-    gap: '20px',
-
+    justifyContent: "center",
+    gap: "20px",
   };
 
   const detailTitleStyle = {
@@ -63,21 +61,29 @@ const AboutDetail = forwardRef((props, ref) => {
     justifyContent: "start",
     // alignItems: 'center'
     alignSelf: "center",
-    textAlign: 'center'
-
+    textAlign: "center",
   };
 
   return (
     <Grid container spacing={2} justifyContent="center">
-        <Grid item sx={detailItemStyle}>
-          <Grid item sx={detailIconsStyle}>
-            {aboutDetail.icons.map((icon, iconIndex) => (
-              <img key={iconIndex} src={icon} alt={aboutDetail.title} {...getSkillIconStyle()} />
-            ))}
-          </Grid>
-            <Typography sx={detailTitleStyle} variant="h6">{aboutDetail.title}</Typography>
-            <Typography sx={detailTextStyle}>{aboutDetail.text}</Typography>
+      <Grid item sx={detailItemStyle}>
+        <Grid item sx={detailIconsStyle}>
+          {aboutDetail.icons.map((icon, iconIndex) => (
+            <img
+              key={iconIndex}
+              src={icon}
+              alt={aboutDetail.title}
+              {...getSkillIconStyle()}
+            />
+          ))}
         </Grid>
+        <Typography sx={detailTitleStyle} variant="h6">
+          {aboutDetail.title}
+        </Typography>
+        <Typography variant="p" sx={detailTextStyle}>
+          {aboutDetail.text}
+        </Typography>
+      </Grid>
     </Grid>
   );
 });

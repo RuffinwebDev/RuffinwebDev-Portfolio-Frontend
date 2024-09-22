@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import IconButton from "@mui/material/IconButton";
 import LaunchIcon from "@mui/icons-material/Launch";
-import SkillsArray from "../../utils/SkillsArray.ts";
+import SkillsArray from "../../config/skillsContent.ts";
 import Link from "@mui/material/Link";
 import { useTheme } from "@mui/material";
 
@@ -27,7 +27,7 @@ const Project = ({ title, summary, previewUrl, className, skills }) => {
     padding: "15px",
     textAlign: "start",
     height: "100%", // Ensure each project component occupies the same height
-    // backgroundColor: theme.palette.depth.main,
+    backgroundColor: theme.palette.depth.main,
   };
 
   const projectTitleStyle = {

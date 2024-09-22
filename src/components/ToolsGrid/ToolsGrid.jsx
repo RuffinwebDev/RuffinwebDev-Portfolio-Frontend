@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import SkillsArray from "../../utils/SkillsArray";
+import skillsContent from "../../config/skillsContent";
 import Link from "@mui/material/Link";
 import { useMediaQuery } from "@mui/material";
 
@@ -29,18 +29,15 @@ const ToolsGrid = forwardRef((props, ref) => {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: 'center',
-    // alignItems: { xs: "center", sm: "start" },
+    alignItems: "center",
   };
 
   return (
     <Grid container spacing={2} justifyContent="center">
-      {SkillsArray.map((skill, index) => (
+      {skillsContent.map((skill, index) => (
         <Grid item xs={6} sm={4} md={3} key={index} sx={skillItemStyle}>
-          <Link href={skill.tagLink} target="_blank">
-            <img src={skill.icon} alt={skill.name} {...getSkillIconStyle()} />
-            <Typography sx={{ alignSelf: "center" }}>{skill.name}</Typography>
-          </Link>
+          <img src={skill.icon} alt={skill.name} {...getSkillIconStyle()} />
+          <Typography sx={{ alignSelf: "center" }}>{skill.name}</Typography>
         </Grid>
       ))}
     </Grid>

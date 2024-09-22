@@ -1,11 +1,11 @@
-interface Skill {
+interface skillsContentProps {
   name: string;
   icon: string;
   tagLink: string;
 }
 
 // Define the array using the Skill interface
-const SkillsArray: Skill[] = [
+const skillsContent: skillsContentProps[] = [
   {
     name: "Python",
     icon: "/media/python.svg",
@@ -42,7 +42,7 @@ const SkillsArray: Skill[] = [
     icon: "/media/mui.svg",
     tagLink: "https://mui.com/material-ui/getting-started/",
   },
-   {
+  {
     name: "Nginx",
     icon: "/media/nginx.svg",
     tagLink: "https://www.nginx.com/solutions/",
@@ -85,4 +85,4 @@ const SkillsArray: Skill[] = [
   },
 ];
 
-export default SkillsArray;
+export default skillsContent;

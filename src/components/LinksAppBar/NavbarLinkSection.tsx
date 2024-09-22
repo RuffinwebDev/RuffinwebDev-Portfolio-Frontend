@@ -10,7 +10,11 @@ interface NavbarLinkProps {
   text: string;
 }
 
-const NavbarLinkSection: React.FC<NavbarLinkProps> = ({ href, onClick, text }) => {
+const NavbarLinkSection: React.FC<NavbarLinkProps> = ({
+  href,
+  onClick,
+  text,
+}) => {
   const theme = useTheme();
   const isSmallDevice = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -21,7 +25,12 @@ const NavbarLinkSection: React.FC<NavbarLinkProps> = ({ href, onClick, text }) =
 
   return (
     <Button onClick={handleButtonClick} sx={{ display: "block", padding: "0" }}>
-      <Typography sx={{ textDecoration: "none", color: isSmallDevice ? "#000" : undefined }}>
+      <Typography
+        sx={{
+          textDecoration: "none",
+          color: isSmallDevice ? "#000" : undefined,
+        }}
+      >
         {text}
       </Typography>
     </Button>

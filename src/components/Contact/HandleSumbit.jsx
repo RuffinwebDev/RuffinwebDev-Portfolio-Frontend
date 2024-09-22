@@ -38,11 +38,7 @@ const HandleSubmit = async (
   }
 
   // Error checks before submission
-  if (
-    !errors.firstName &&
-    !errors.message &&
-    !errors.email
-  ) {
+  if (!errors.firstName && !errors.message && !errors.email) {
     try {
       // Save sender details using the fetch request component
       // console.log('Running sendData fetch requests.')

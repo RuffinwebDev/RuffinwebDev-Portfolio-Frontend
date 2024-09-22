@@ -7,7 +7,7 @@ import { Copyright } from "../Copyright/Copyright";
 import FooterLegal from "../FooterLegal/FooterLegal";
 import FooterSocials from "../FooterSocials/FooterSocials";
 import FooterLinks from "../FooterLinks/FooterLinks";
-import { brandLinks } from "../../config/brandLinks";
+import { footerPages } from "../../config/footerPages";
 import Divider from "@mui/material/Divider";
 import { useTheme } from "@mui/material/styles";
 
@@ -38,7 +38,7 @@ const Footer: React.FC<FooterProps> = ({ links }) => {
     <Box sx={footerStyle}>
       <Divider sx={{ width: "100%", borderColor: "white" }} />
 
-      <FooterLinks links={brandLinks} />
+      <FooterLinks links={footerPages} />
       {/*<FooterButtons />*/}
       <FooterLegal />
     </Box>

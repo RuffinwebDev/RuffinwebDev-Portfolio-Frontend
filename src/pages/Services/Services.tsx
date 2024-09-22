@@ -24,7 +24,7 @@ export const Services = React.forwardRef((props, red) => {
 
   return (
     <Box sx={servicesPageStyle}>
-      <Typography>Services Information Incoming</Typography>
+      <Typography>Services Information Coming Soon</Typography>
     </Box>
   );
 });

@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import AboutDetail from "../../components/About/AboutDetail";
 import ToolsGrid from "../../components/ToolsGrid/ToolsGrid";
-import AboutArray from "../../utils/AboutArray";
+import aboutContent from "../../config/aboutContent";
 import GsapReveal from "./GsapReveal";
 import { useTheme } from "@mui/material";
 

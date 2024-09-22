@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import AboutDetail from "../../components/About/AboutDetail";
 import ToolsGrid from "../../components/ToolsGrid/ToolsGrid";
-import AboutArray from "../../utils/AboutArray";
+import aboutContent from "../../config/aboutContent";
 import GsapReveal from "./GsapReveal";
 import { useTheme } from "@mui/material";
 
@@ -67,8 +67,8 @@ const AboutCard = React.forwardRef((props, ref) => {
         About Me
       </Typography>
       <Box sx={textDetailStyle}>
-        {/* Map through AboutArray and render each text */}
-        {AboutArray.map((detail, index) => (
+        {/* Map through aboutContent and render each text */}
+        {aboutContent.map((detail, index) => (
           <AboutDetail key={index} aboutDetail={detail} />
         ))}
       </Box>

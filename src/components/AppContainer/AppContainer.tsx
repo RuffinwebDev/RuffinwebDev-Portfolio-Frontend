@@ -10,7 +10,7 @@ const AppContainer = () => {
   const titleRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const toolsRef = useRef<HTMLDivElement>(null);
-  const projectsRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
   const resumeRef = useRef<HTMLDivElement>(null);
 
   const appContainerStyle = {
@@ -30,12 +30,12 @@ const AppContainer = () => {
         titleRef={titleRef}
         toolsRef={toolsRef}
         aboutRef={aboutRef}
-        projectsRef={projectsRef}
+        experienceRef={experienceRef}
         resumeRef={resumeRef}
       />
       <ScrollToTop />
       <Outlet
-        context={{ titleRef, toolsRef, aboutRef, projectsRef, resumeRef }}
+        context={{ titleRef, toolsRef, aboutRef, experienceRef, resumeRef }}
       />
       <Footer />
     </Container>
