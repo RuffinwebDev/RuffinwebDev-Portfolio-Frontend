@@ -30,7 +30,7 @@ const Info: React.FC<InfoProps> = ({ pageKey }) => {
     textAlign: "start",
     width: "100%",
     maxWidth: "1600px",
-    margin: "50px 0px 0",
+    margin: "20px 0px 0",
     padding: "15px",
     gap: "30px",
     "@media (max-width: 1000px)": {
@@ -111,7 +111,7 @@ const Info: React.FC<InfoProps> = ({ pageKey }) => {
 
         {page.content.map((paragraph, index) => (
           <Typography
-            sx={{ color: `${theme.palette.primary.light}`, fontSize: "18px" }}
+            sx={{ color: `${theme.palette.primary.light}`, fontSize: "16px" }}
             variant="p"
             key={index}
           >

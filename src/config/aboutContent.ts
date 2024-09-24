@@ -31,7 +31,7 @@ const aboutContent: aboutContentProps[] = [
     icons: ["/media/aws.svg", "/media/docker.svg"],
   },
   {
-    title: "Experience Management",
+    title: "Project Management",
     text: "Experienced in project management using Jira and Scrum methodology, I facilitate team collaboration, sprint planning, and backlog grooming to deliver high-quality software on time. Leveraging features offered by Jira, I create timelines, track project progress, assign and manage tasks, track bugs, and adapt to changing requirements to ensure project success.",
     icons: ["/media/jira.svg", "/media/scrum.svg"],
   },

@@ -47,7 +47,7 @@ const ContactDetails = ({ title, summary, previewUrl, className, skills }) => {
         <Link href="mailto:contact@ruffinweb.com" target="_blank">
           <Typography
             sx={{
-              fontWeight: "bold",
+              // fontWeight: "bold",
               textDecoration: "underline",
               color: "white",
             }}
@@ -82,7 +82,7 @@ const ContactDetails = ({ title, summary, previewUrl, className, skills }) => {
             variant="h5"
             color="primary"
           >
-            Resume
+            resume
           </Typography>
         </Link>
 
@@ -90,21 +90,16 @@ const ContactDetails = ({ title, summary, previewUrl, className, skills }) => {
       </Box>
 
       <Box>
-        <Typography sx={{ fontWeight: "bold" }} variant="h6" color="primary">
-          Washington D.C.
+        <Typography sx={{}} variant="h6" color="primary">
+          Washington D.C. | Northern Virginia
         </Typography>
-        <Typography sx={{ fontWeight: "bold" }} variant="h6" color="primary">
-          Baltimore Maryland
-        </Typography>
-        <Typography sx={{ fontWeight: "bold" }} variant="h6" color="primary">
-          Northern Virginia
-        </Typography>
+        <Typography sx={{}} variant="h6" color="primary"></Typography>
       </Box>
 
       <Box sx={{ maxWidth: "70%" }}>
         <Typography variant="h6" color="primary">
-          I am currently working on various freelance projects and actively
-          seeking more to create.
+          I am currently working on various freelance projects and always
+          seeking more.
         </Typography>
         <Typography variant="h6" color="primary">
           Feel free to reach out to me about any collaboration or employment

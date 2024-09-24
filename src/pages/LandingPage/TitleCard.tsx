@@ -61,15 +61,16 @@ const TitleCard = forwardRef<HTMLDivElement, TitleCardProps>(
       margin: "0",
     };
 
-    const titleLinkCard: React.CSSProperties = {
+    const titleLinkCardStyle: React.CSSProperties = {
       margin: "50px 0 0",
       width: "200px",
       textDecoration: "none",
       ...buttonStyle, // Merge with custom styles from props
     };
 
-    const titleLink: React.CSSProperties = {
+    const titleLinkStyle: React.CSSProperties = {
       textDecoration: "none",
+      color: `${theme.palette.primary.light}`,
     };
 
     return (
@@ -116,16 +117,20 @@ const TitleCard = forwardRef<HTMLDivElement, TitleCardProps>(
             ))}
           </Typography>
 
-          <Button sx={titleLinkCard} variant="outlined" onClick={onButtonClick}>
-            <Link
-              sx={titleLink}
-              href={buttonLink}
-              target="_blank"
-              variant="body2"
+          <Link
+            sx={titleLinkStyle}
+            href={buttonLink}
+            target="_blank"
+            variant="body2"
+          >
+            <Button
+              sx={titleLinkCardStyle}
+              variant="outlined"
+              onClick={onButtonClick}
             >
               {buttonText}
-            </Link>
-          </Button>
+            </Button>
+          </Link>
 
           <ArrowDownwardIcon sx={{ mt: 0 }} />
         </Box>

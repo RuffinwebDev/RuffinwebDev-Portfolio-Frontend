@@ -16,11 +16,11 @@ const ErrorPageNotFound: React.FC<ErrorPageNotFoundProps> = ({ links }) => {
   const errorPageStyle = {
     color: `${theme.palette.primary.light}`,
     padding: "0",
-    margin: "20px",
+    margin: "20px 20px 100px 20px",
     display: "flex",
     flex: 1,
     flexDirection: "column",
-    justifyContent: "center",
+    justifyContent: "start",
     alignItems: "center",
     gap: "20px",
 
