@@ -34,9 +34,9 @@ export const footerPages: footerPagesProps[] = [
         title: "About This Site",
         content: [
           "This web application was created to be my digital resume and online hub. Combining a robust backend with an interactive, high-performance frontend. On the backend, Django, a powerful web framework for Python, handles the core business logic. It is containerized and deployed using Docker which ensures smooth and consistent deployment. The entire backend is hosted on an Amazon EC2 instance. GitHub Actions is used to update both the backend and frontend through AWS Open ID Connect (OIDC).",
-          "The site uses PostgreSQL as its database management system, hosted on the same EC2 instance as the backend. PostgreSQL is a powerful, open-source relational database that ensures data integrity and provides efficient handling of the application's data. This setup allows the backend to easily communicate with the database, enabling fast and reliable storage and retrieval of information. By hosting both the database and backend on the same instance, the application remains cost-effective while maintaining a high level of performance.",
-          "The frontend of the site is built using React with TypeScript, a technology that ensures a dynamic user experience with strong typing for better development practices. The frontend is deployed on Amazon's S3 service, which offers reliable storage, and is delivered globally through CloudFront, a content delivery network (CDN) that enhances the site's loading speed and security.",
-          "I use PyCharm as my integrated development environment (IDE), paired with Git Bash via Windows Subsystem for Linux (WSL). The overall cloud infrastructure, including EC2, S3, CloudFront, WAF (Web Application Firewall), and VPC (Virtual Private Cloud), costs approximately $20 per month, providing a secure and scalable setup for the site with room for upward scaling.",
+          "The site uses PostgreSQL as its database management system, hosted on the same EC2 instance as the backend. PostgreSQL is a powerful, open-source relational database system. This setup allows the backend to easily communicate with the database, enabling fast and reliable storage and retrieval of information. By hosting both the database and backend on the same instance, the application remains cost-effective while maintaining a high level of performance.",
+          "The frontend of the site is built using React with TypeScript and deployed on Amazon's S3 service, which offers reliable storage, and is delivered through CloudFront, a content delivery network (CDN) that enhances the site's loading speed and security.",
+          "I use PyCharm as my integrated development environment (IDE), paired with Git Bash via Windows Subsystem for Linux (WSL). The overall cloud infrastructure, including EC2, S3, CloudFront, WAF (Web Application Firewall), and VPC (Virtual Private Cloud), costs approximately $20 per month, providing a secure and scalable setup for the site.",
         ],
         last_updated: "2024-09-22",
       },
@@ -68,7 +68,7 @@ export const footerPages: footerPagesProps[] = [
         title: "Help Center",
         content: [
           "I offer full-stack development services for individuals and businesses looking to build high-performance web applications.",
-          "Contact me for custom solutions in Python, Django, JavaScript, React, PostgresSQL, and AWS cloud architecture.",
+          "Contact me for custom solutions in Python, Django, JavaScript, React, PostgreSQL, and AWS cloud architecture.",
         ],
         last_updated: "2024-09-22",
       },

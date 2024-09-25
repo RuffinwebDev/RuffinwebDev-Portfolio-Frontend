@@ -16,7 +16,7 @@ const ErrorPageNotFound: React.FC<ErrorPageNotFoundProps> = ({ links }) => {
   const errorPageStyle = {
     color: `${theme.palette.primary.light}`,
     padding: "0",
-    margin: "20px 20px 100px 20px",
+    margin: "20px 20px 150px 20px",
     display: "flex",
     flex: 1,
     flexDirection: "column",
@@ -32,7 +32,7 @@ const ErrorPageNotFound: React.FC<ErrorPageNotFoundProps> = ({ links }) => {
   return (
     <Box sx={errorPageStyle}>
       <ReturnButton />
-      <ErrorOutlineIcon sx={{ fontSize: 140 }} />
+      <ErrorOutlineIcon sx={{ fontSize: 110 }} />
       <Typography sx={{ color: `${theme.palette.primary.light}` }} variant="h3">
         404 Error
       </Typography>
