@@ -13,7 +13,7 @@ import {
 import { AccountCircle, Menu as MenuIcon } from "@mui/icons-material";
 import { useTheme } from "@mui/material";
 import NavbarLinkSection from "./NavbarLinkSection";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import NavigationMenuSocial from "./NavgationMenuSocial";
 import Button from "@mui/material/Button";
 
@@ -34,6 +34,10 @@ const LinksAppbar: React.FC<LinksAppbarProps> = ({
   resumeRef,
 }) => {
   const theme = useTheme();
+  const location = useLocation();
+  const hideSections = location.pathname !== "/";
+
+  console.log(hideSections);
 
   // Define reusable state for nav and user menu
   const [anchorElSocial, setAnchorElSocial] =
@@ -147,65 +151,66 @@ const LinksAppbar: React.FC<LinksAppbarProps> = ({
           </Link>
 
           {/* Mobile Page Section Menu*/}
-          <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
-            <Tooltip title="Navigate to">
-              <IconButton
-                onClick={handleClick(setAnchorElSection)}
-                sx={{ p: 0 }}
+          {!hideSections && (
+            <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
+              <Tooltip title="Navigate to">
+                <IconButton
+                  onClick={handleClick(setAnchorElSection)}
+                  sx={{ p: 0 }}
+                >
+                  <MenuIcon />
+                </IconButton>
+              </Tooltip>
+              <Menu
+                id="menu-appbar"
+                anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                transformOrigin={{ vertical: "top", horizontal: "right" }}
+                sx={{ mt: "20px" }}
+                anchorEl={anchorElSection}
+                open={Boolean(anchorElSection)}
+                onClose={handleClose(setAnchorElSection)}
               >
-                <MenuIcon />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              id="menu-appbar"
-              anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-              transformOrigin={{ vertical: "top", horizontal: "right" }}
-              sx={{ mt: "20px" }}
-              anchorEl={anchorElSection}
-              open={Boolean(anchorElSection)}
-              onClose={handleClose(setAnchorElSection)}
-            >
-              {sections.map((section, index) => (
-                <MenuItem sx={{ margin: "0", padding: "0" }} key={index}>
-                  <Button
-                    style={{
-                      textDecoration: "none",
-                      width: "100%",
-                      textAlign: "start",
-                      padding: "6px 16px",
-                    }}
-                    onClick={() => {
-                      const sectionRef = section.ref; // Use the section's ref
-
-                      const yOffset = -100; // Adjust this value based on your fixed header height
-                      if (sectionRef && sectionRef.current) {
-                        const y =
-                          sectionRef.current.getBoundingClientRect().top +
-                          window.pageYOffset +
-                          yOffset;
-                        window.scrollTo({ top: y, behavior: "smooth" });
-                      }
-
-                      handleClose(setAnchorElSection)(); // Close the menu after clicking
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        margin: "0",
-                        padding: "0",
-                        color: "#000000",
-                        width: "100%",
+                {sections.map((section, index) => (
+                  <MenuItem sx={{ margin: "0", padding: "0" }} key={index}>
+                    <Button
+                      style={{
                         textDecoration: "none",
+                        width: "100%",
+                        textAlign: "start",
+                        padding: "6px 16px",
+                      }}
+                      onClick={() => {
+                        const sectionRef = section.ref; // Use the section's ref
+
+                        const yOffset = -100; // Adjust this value based on your fixed header height
+                        if (sectionRef && sectionRef.current) {
+                          const y =
+                            sectionRef.current.getBoundingClientRect().top +
+                            window.pageYOffset +
+                            yOffset;
+                          window.scrollTo({ top: y, behavior: "smooth" });
+                        }
+
+                        handleClose(setAnchorElSection)(); // Close the menu after clicking
                       }}
                     >
-                      {section.title}
-                    </Typography>
-                  </Button>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-
+                      <Typography
+                        sx={{
+                          margin: "0",
+                          padding: "0",
+                          color: "#000000",
+                          width: "100%",
+                          textDecoration: "none",
+                        }}
+                      >
+                        {section.title}
+                      </Typography>
+                    </Button>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+          )}
           {/* Desktop Social Links */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {socialPages.map((page, index) => (
@@ -226,37 +231,36 @@ const LinksAppbar: React.FC<LinksAppbarProps> = ({
           </Box>
 
           {/* Desktop Section Links */}
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", md: "flex" },
-              gap: "15px",
-              justifyContent: "flex-end",
-            }}
-          >
-            {sections.map((section, index) => (
-              <NavbarLinkSection
-                key={index}
-                text={section.title}
-                onClick={() => {
-                  handleClose(setAnchorElSection)();
+          {!hideSections && (
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", md: "flex" },
+                gap: "15px",
+                justifyContent: "flex-end",
+              }}
+            >
+              {sections.map((section, index) => (
+                <NavbarLinkSection
+                  key={index}
+                  text={section.title}
+                  onClick={() => {
+                    handleClose(setAnchorElSection)();
+                    const sectionRef = section.ref;
+                    const yOffset = -100;
 
-                  // Adjust the scroll position manually
-                  const sectionRef = section.ref;
-                  const yOffset = -100;
-
-                  if (sectionRef && sectionRef.current) {
-                    const y =
-                      sectionRef.current.getBoundingClientRect().top +
-                      window.pageYOffset +
-                      yOffset;
-
-                    window.scrollTo({ top: y, behavior: "smooth" });
-                  }
-                }}
-              />
-            ))}
-          </Box>
+                    if (sectionRef && sectionRef.current) {
+                      const y =
+                        sectionRef.current.getBoundingClientRect().top +
+                        window.pageYOffset +
+                        yOffset;
+                      window.scrollTo({ top: y, behavior: "smooth" });
+                    }
+                  }}
+                />
+              ))}
+            </Box>
+          )}
         </Toolbar>
       </Container>
     </AppBar>

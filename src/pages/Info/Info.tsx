@@ -68,7 +68,7 @@ const Info: React.FC<InfoProps> = ({ pageKey }) => {
     flex: 1,
     textAlign: "start",
     width: "100%",
-    maxWidth: "1600px",
+    maxWidth: "1000px",
     margin: "0px 0",
     padding: "0",
     gap: "20px",
